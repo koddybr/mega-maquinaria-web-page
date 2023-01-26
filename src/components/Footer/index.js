@@ -110,7 +110,7 @@ const Footer = () => {
                             Mega Maquinaria
                         </SocialLogo>
                         <WebSiteRights>
-                            {new Date().getFullYear()} All rights reserverd
+                            Copyright {new Date().getFullYear()} All rights reserverd koddybr@gmail.com
                           </WebSiteRights>
                         <SocialIcons>
                             <SocialIconLink href="/" target="_blank" aria-label="Facebook">

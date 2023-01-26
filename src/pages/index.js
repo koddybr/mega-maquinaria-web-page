@@ -10,6 +10,18 @@ import SignIn from '../components/Signin';
 
 
 const Home = () => {
+
+  const config = [
+    {
+      title: 'image one',
+      image: require('../images/im1.jpg')
+    },
+    {
+      title: 'image two',
+      image: require('../images/im2.jpg')
+    }
+  ]
+
   const [isOpen, setIsOpen] = useState(false)
 
   const toggle = () => {
@@ -20,7 +32,7 @@ const Home = () => {
     <>
        <Sidebar isOpen={isOpen} toggle={toggle}/>
        <Navbar toggle={toggle} />
-       <HeroSection />
+       <HeroSection config={config}/>
        <InfoSection {...homeObjOne}/>
        <InfoSection {...homeObjTwo}/>
        <Services />

@@ -12,21 +12,43 @@ import {
     ArrowRight,
     HeroImg,
     Container,
-    ImageContainer
+    ImageContainer,
+    Title,
+    NavButton
  } from './HeroElements'
 import img from '../../images/im1.jpg'
 
-const HeroSection = () => {
+const HeroSection = ({config}) => {
     const [hover, setHover] = useState(false)
     const [ImageIndex, setimageindex] = useState(0)
     const onHover = () => {
         setHover(!hover)
     }
     
+    const next = () => {
+        console.log('sdsds')
+        //setimageindex(state => state += 1);
+        //if (ImageIndex === config.length -1) setimageindex(0)
+    }
+
+    const prev = () => {
+        setimageindex(state => state -= 1);
+        if (ImageIndex === 0) setimageindex(config.length -1);
+    }
+
     return (
     <HeroContainer id='inicio'>
         <Container>
-            <imageContainer src={config[ImageIndex].image}/>
+            <ImageContainer src={config[ImageIndex].image}/>
+            <Title>
+                {config[ImageIndex].title}
+            </Title>
+            <NavButton right onClick={ ()=>{ next() }}>AAAAA
+                <i className = "fa fa-arrow-circle-right"></i>
+            </NavButton>
+            <NavButton onClick={prev}>BBBBB
+                <i className = "fa fa-arrow-circle-right"></i>
+            </NavButton>
         </Container>
         <HeroContent>
             <HeroH1>MEGA MAQUINARIA BOLIVIA S.R.L.</HeroH1>
